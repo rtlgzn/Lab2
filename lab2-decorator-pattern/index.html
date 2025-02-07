@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - Decorator Pattern</title>
+    <script src="p5.min.js"></script>  <!-- p5.js library -->
+    <script src="decorator.js"></script> <!-- Your JavaScript code -->
+</head>
+<body>
+    <h1>Decorator Pattern in p5.js</h1>
+
+    <!-- Buttons to add borders -->
+    <button id="thinBorderBtn">Add Thin Border</button>
+    <button id="thickBorderBtn">Add Thick Border</button>
+    <button id="dotsBorderBtn">Add Dots Border</button>
+    <button id="customBorderBtn">Add Custom Border</button>
+    <button id="removeLastBtn">Remove Last</button>
+
+    <!-- Radio buttons to select labels -->
+    <div id="labelSelection">
+        <label><input type="radio" name="label" value="0" onclick="selectLabel(0)" checked> Label 1</label>
+        <label><input type="radio" name="label" value="1" onclick="selectLabel(1)"> Label 2</label>
+        <label><input type="radio" name="label" value="2" onclick="selectLabel(2)"> Label 3</label>
+        <label><input type="radio" name="label" value="3" onclick="selectLabel(3)"> Label 4</label>
+        <label><input type="radio" name="label" value="4" onclick="selectLabel(4)"> Label 5</label>
+    </div>
+
+    <script>
+        // Attach event listeners to call functions from decorator.js
+        document.getElementById("thinBorderBtn").addEventListener("click", () => addDecorator("thin"));
+        document.getElementById("thickBorderBtn").addEventListener("click", () => addDecorator("thick"));
+        document.getElementById("dotsBorderBtn").addEventListener("click", () => addDecorator("dots"));
+        document.getElementById("customBorderBtn").addEventListener("click", () => addDecorator("glow"));
+        document.getElementById("removeLastBtn").addEventListener("click", () => removeLastDecorator());
+    </script>
+</body>
+</html>
